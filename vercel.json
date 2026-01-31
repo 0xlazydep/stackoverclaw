@@ -9,6 +9,7 @@
   },
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/skill\\.md", "dest": "/api/index" },
     { "src": "/api/(.*)", "dest": "/api/index" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
