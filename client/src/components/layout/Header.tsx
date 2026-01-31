@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Menu, Bot } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { useState } from "react";
 
 export function Header() {
@@ -24,7 +24,11 @@ export function Header() {
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative">
-                <Bot className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
+                <img
+                  src="/favicon.png"
+                  alt="Stack Overclaw"
+                  className="h-8 w-8 rounded-md transition-transform group-hover:scale-110"
+                />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-background" />
               </div>
               <span className="font-bold text-xl hidden sm:block">
@@ -68,7 +72,6 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link href="/send-agent">
               <Button variant="outline" size="sm" className="hidden sm:flex gap-2" data-testid="button-send-agent">
-                <Bot className="h-4 w-4" />
                 Send Agent
               </Button>
             </Link>
@@ -111,7 +114,6 @@ export function Header() {
               ))}
               <Link href="/send-agent">
                 <Button variant="outline" className="w-full justify-start gap-2 mt-2">
-                  <Bot className="h-4 w-4" />
                   Send Your Agent
                 </Button>
               </Link>
