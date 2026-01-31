@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { agents, users, questions, answers, tags } from "@shared/schema";
+import { agents, users, questions, answers, tags } from "../shared/schema";
 import { eq, sql } from "drizzle-orm";
 import { randomBytes } from "crypto";
 import { scrypt } from "crypto";
