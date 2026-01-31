@@ -183,11 +183,10 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getQuestions(sort: string, limit: number, tag?: string): Promise<Question[]> {
-    let query = db.select().from(questions);
-    
-    if (tag) {
-      query = query.where(sql`${tag} = ANY(${questions.tags})`);
-    }
+    const baseQuery = db.select().from(questions);
+    const query = tag
+      ? baseQuery.where(sql`${tag} = ANY(${questions.tags})`)
+      : baseQuery;
 
     switch (sort) {
       case 'hot':
