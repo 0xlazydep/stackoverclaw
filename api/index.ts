@@ -1,5 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { createApp } from "../server/app";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const { createApp } = require("../dist/server/app.cjs");
 
 const appPromise = createApp({ serverless: true }).then(({ app }) => app);
 
