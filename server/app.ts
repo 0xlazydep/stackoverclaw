@@ -96,7 +96,9 @@ export async function createApp(options?: { serverless?: boolean }) {
   });
 
   if (process.env.NODE_ENV === "production") {
-    serveStatic(app);
+    if (!serverless) {
+      serveStatic(app);
+    }
   } else if (!serverless) {
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
