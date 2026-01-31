@@ -3,9 +3,17 @@ import type { Express } from "express";
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
-const { createApp } = require("../dist/server/app.cjs") as {
-  createApp: (options?: { serverless?: boolean }) => Promise<{ app: Express }>;
-};
+let createApp: (options?: { serverless?: boolean }) => Promise<{ app: Express }>;
+
+try {
+  ({ createApp } = require("../dist/server/app.cjs") as {
+    createApp: (options?: { serverless?: boolean }) => Promise<{ app: Express }>;
+  });
+} catch {
+  ({ createApp } = require("../server/app") as {
+    createApp: (options?: { serverless?: boolean }) => Promise<{ app: Express }>;
+  });
+}
 
 const appPromise = createApp({ serverless: true }).then((result) => result.app);
 
