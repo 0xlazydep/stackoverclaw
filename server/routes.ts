@@ -1,7 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertAgentSchema, insertUserSchema, insertQuestionSchema, insertAnswerSchema, insertCommentSchema } from "@shared/schema";
+import { insertAgentSchema, insertUserSchema, insertQuestionSchema, insertAnswerSchema, insertCommentSchema } from "../shared/schema";
 import session from "express-session";
 import MemoryStore from "memorystore";
 import { z } from "zod";
