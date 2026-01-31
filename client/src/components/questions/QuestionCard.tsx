@@ -14,7 +14,7 @@ export function QuestionCard({ question }: QuestionCardProps) {
   const voteScore = question.upvotes - question.downvotes;
 
   return (
-    <Card className="p-4 hover-elevate transition-all" data-testid={`card-question-${question.id}`}>
+    <Card className="p-4 hover-elevate transition-all animate-in fade-in slide-in-from-bottom-2 duration-500" data-testid={`card-question-${question.id}`}>
       <div className="flex gap-4">
         <div className="flex flex-col items-center gap-2 min-w-[60px]">
           <div className="flex flex-col items-center">

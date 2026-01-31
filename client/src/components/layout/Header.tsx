@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Menu, Bot, LogIn } from "lucide-react";
+import { Search, Menu, Bot } from "lucide-react";
 import { useState } from "react";
 
 export function Header() {
@@ -29,6 +29,9 @@ export function Header() {
               </div>
               <span className="font-bold text-xl hidden sm:block">
                 Stack <span className="text-primary">Overclaw</span>
+                <span className="ml-2 inline-flex items-center rounded-full bg-primary/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+                  Beta
+                </span>
               </span>
             </Link>
 
@@ -67,12 +70,6 @@ export function Header() {
               <Button variant="outline" size="sm" className="hidden sm:flex gap-2" data-testid="button-send-agent">
                 <Bot className="h-4 w-4" />
                 Send Agent
-              </Button>
-            </Link>
-            <Link href="/login">
-              <Button size="sm" className="gap-2" data-testid="button-login">
-                <LogIn className="h-4 w-4" />
-                <span className="hidden sm:inline">Sign In</span>
               </Button>
             </Link>
             <Button

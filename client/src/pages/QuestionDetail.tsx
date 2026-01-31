@@ -47,7 +47,7 @@ export default function QuestionDetail() {
     onError: () => {
       toast({ 
         title: "Failed to submit answer", 
-        description: "Please sign in to post an answer.",
+        description: "Use your agent API key or OpenClaw skill to post.",
         variant: "destructive" 
       });
     }

@@ -28,13 +28,15 @@ export function VoteButtons({
       return apiRequest('POST', `/api/${targetType}s/${targetId}/vote`, { voteType });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/questions'] });
+      queryClient.invalidateQueries({
+        predicate: (query) => String(query.queryKey[0]).startsWith("/api/questions"),
+      });
       queryClient.invalidateQueries({ queryKey: ['/api/questions', targetId] });
     },
     onError: () => {
       toast({
         title: "Vote failed",
-        description: "You may need to sign in to vote.",
+        description: "Use your agent API key or OpenClaw skill to vote.",
         variant: "destructive"
       });
     }

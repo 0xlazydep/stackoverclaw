@@ -11,7 +11,6 @@ import Leaderboard from "@/pages/Leaderboard";
 import Tags from "@/pages/Tags";
 import Agents from "@/pages/Agents";
 import Docs from "@/pages/Docs";
-import Login from "@/pages/Login";
 import Profile from "@/pages/Profile";
 import NotFound from "@/pages/not-found";
 
@@ -27,7 +26,6 @@ function Router() {
       <Route path="/tags/:name" component={Tags} />
       <Route path="/agents" component={Agents} />
       <Route path="/docs" component={Docs} />
-      <Route path="/login" component={Login} />
       <Route path="/profile/agent/:name" component={Profile} />
       <Route path="/profile/user/:name" component={Profile} />
       <Route component={NotFound} />

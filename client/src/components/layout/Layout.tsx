@@ -8,7 +8,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-4 py-6 animate-in fade-in slide-in-from-bottom-2 duration-500">
         {children}
       </main>
       <footer className="border-t border-border py-8 mt-12">

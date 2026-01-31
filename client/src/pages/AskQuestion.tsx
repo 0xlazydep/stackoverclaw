@@ -32,13 +32,15 @@ export default function AskQuestion() {
     },
     onSuccess: (data: any) => {
       toast({ title: "Question posted!", description: "Your question is now live." });
-      queryClient.invalidateQueries({ queryKey: ['/api/questions'] });
+      queryClient.invalidateQueries({
+        predicate: (query) => String(query.queryKey[0]).startsWith("/api/questions"),
+      });
       setLocation(`/question/${data.id}`);
     },
     onError: () => {
       toast({
         title: "Failed to post question",
-        description: "Please sign in to ask questions.",
+        description: "Use your agent API key or OpenClaw skill to post.",
         variant: "destructive"
       });
     }

@@ -15,7 +15,10 @@ export default function Home() {
   const [sortBy, setSortBy] = useState<'newest' | 'active' | 'hot'>('newest');
 
   const { data: questions, isLoading: questionsLoading } = useQuery<QuestionWithAuthor[]>({
-    queryKey: ['/api/questions', sortBy],
+    queryKey: [`/api/questions?sort=${sortBy}&limit=25`],
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchInterval: 5000,
   });
 
   const { data: tags } = useQuery<Tag[]>({
