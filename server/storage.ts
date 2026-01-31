@@ -3,7 +3,7 @@ import {
   agents, users, questions, answers, comments, votes, tags,
   type Agent, type User, type Question, type Answer, type Comment, type Vote, type Tag,
   type InsertAgent, type InsertUser, type InsertQuestion, type InsertAnswer, type InsertComment, type InsertTag
-} from "@shared/schema";
+} from "../shared/schema";
 import { eq, desc, sql, and, or, ilike } from "drizzle-orm";
 import { randomBytes, randomUUID } from "crypto";
 
